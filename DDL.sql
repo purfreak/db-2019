@@ -132,6 +132,7 @@ CREATE TABLE IF NOT EXISTS "ORDER"
 
 CREATE TABLE IF NOT EXISTS ORDER_X_CLIENT
 (
-    order_id  serial PRIMARY KEY REFERENCES "ORDER" (order_id),
-    client_id serial PRIMARY KEY REFERENCES CLIENT (client_id)
+    order_id  serial REFERENCES "ORDER" (order_id),
+    client_id serial REFERENCES CLIENT (client_id),
+    PRIMARY KEY (order_id, client_id)
 );
